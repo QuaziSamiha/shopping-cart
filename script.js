@@ -1,5 +1,5 @@
-// plus button of first phone event handler
-const addBtn = document.getElementById('add-btn1');
+// event handler for plus button of phone
+const addBtn = document.getElementById('add-phn');
 addBtn.addEventListener('click', function () {
     const phnNo = document.getElementById('phn-no').value; // current number of phone
     const phnNoNumber = parseInt(phnNo); // current number of phone in integer value
@@ -10,8 +10,8 @@ addBtn.addEventListener('click', function () {
     document.getElementById('phn-price').innerText = totalPrice; // set the total price of the total number of phone
 })
 
-// minus button of first phone event handler
-const subBtn = document.getElementById('sub-btn1');
+// event handler minus button of phone
+const subBtn = document.getElementById('sub-phn');
 subBtn.addEventListener('click', function () {
     const phnNo = document.getElementById('phn-no').value; // current number of phone
     const phnNoNumber = parseInt(phnNo);
