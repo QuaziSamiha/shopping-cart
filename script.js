@@ -1,3 +1,16 @@
+function calculateTotal() {
+    var phnPrice = document.getElementById('phn-price').innerText;
+    var phnPriceNumber = parseInt(phnPrice);
+    
+    var casePrice = document.getElementById('casing-price').innerText;
+    var casePriceNumber = parseInt(casePrice);
+    
+    var subTotal = phnPriceNumber + casePriceNumber;
+    document.getElementById('sub-total').innerText = subTotal;
+    document.getElementById('total').innerText = subTotal;
+}
+
+
 function addButton(btnId, productNo, price, productPrice) {
     const addBtn2 = document.getElementById(btnId);
     addBtn2.addEventListener('click', function () {
@@ -8,7 +21,11 @@ function addButton(btnId, productNo, price, productPrice) {
 
         const totalPrice = totalProductNo * price;
         document.getElementById(productPrice).innerText = totalPrice; // set the total price of the total number of phone or casing
+
+        calculateTotal(productPrice);
     })
+
+
 }
 
 
@@ -22,10 +39,15 @@ function subtractBtn(btnId, productNo, price, productPrice) {
             document.getElementById(productNo).value = totalProductNo; // set the total number of phone or casing
 
             const totalPrice = totalProductNo * price;
-            document.getElementById(productPrice).innerText = totalPrice; // set the total price of the total number of phone or casing    
+            document.getElementById(productPrice).innerText = totalPrice; // set the total price of the total number of phone or casing 
+
         }
+        calculateTotal(productPrice);
     })
+
+
 }
+
 
 // calling function for plus and minus button operation of phn 
 addButton('add-phn', 'phn-no', 1219, 'phn-price');
@@ -34,14 +56,6 @@ subtractBtn('sub-phn', 'phn-no', 1219, 'phn-price');
 // calling function for plus and minus button operation of casing
 subtractBtn('sub-casing', 'casing-no', 59, 'casing-price');
 addButton('add-casing', 'casing-no', 59, 'casing-price');
-
-
-
-
-
-
-
-
 
 
 
